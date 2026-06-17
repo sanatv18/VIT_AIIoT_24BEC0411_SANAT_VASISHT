@@ -1,0 +1,118 @@
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- START -->
+    <mxCell id="2" value="START" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5d5d5;strokeColor=#666666;fontStyle=1;fontSize=13;arcSize=50;" vertex="1" parent="1">
+      <mxGeometry x="300" y="40" width="160" height="44" as="geometry" />
+    </mxCell>
+
+    <!-- Initialize system -->
+    <mxCell id="3" value="&lt;b&gt;Initialize system&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;GPIO pins, Serial, Wi-Fi, ThingSpeak&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="255" y="120" width="250" height="56" as="geometry" />
+    </mxCell>
+
+    <!-- Wi-Fi connected? -->
+    <mxCell id="4" value="&lt;b&gt;Wi-Fi connected?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="255" y="210" width="250" height="100" as="geometry" />
+    </mxCell>
+
+    <!-- Read PIR -->
+    <mxCell id="6" value="&lt;b&gt;Read PIR sensor&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;motion_detected = HIGH / LOW&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="255" y="370" width="250" height="56" as="geometry" />
+    </mxCell>
+
+    <!-- Read LDR -->
+    <mxCell id="7" value="&lt;b&gt;Read LDR sensor&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;ldr_value = analogRead (0–4095)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="255" y="460" width="250" height="56" as="geometry" />
+    </mxCell>
+
+    <!-- Motion AND ldr < 50? -->
+    <mxCell id="8" value="&lt;b&gt;Motion AND&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;ldr_value &lt; 50?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="240" y="550" width="280" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- Turn LED ON -->
+    <mxCell id="9" value="&lt;b&gt;Turn LED ON&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Send HTTP alert to ThingSpeak&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00CC66;fontColor=#ffffff;strokeColor=#007A33;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="255" y="710" width="250" height="56" as="geometry" />
+    </mxCell>
+
+    <!-- Motion detected? (second diamond) -->
+    <mxCell id="13" value="&lt;b&gt;Motion detected?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="555" y="550" width="200" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- Motion in bright light -->
+    <mxCell id="14" value="&lt;b&gt;LED OFF&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Motion in bright light&lt;br&gt;No alert sent&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="570" y="690" width="170" height="56" as="geometry" />
+    </mxCell>
+
+    <!-- No motion -->
+    <mxCell id="15" value="&lt;b&gt;LED OFF&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;No motion detected&lt;br&gt;No alert sent&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="570" y="800" width="170" height="56" as="geometry" />
+    </mxCell>
+
+    <!-- Wait 15 seconds -->
+    <mxCell id="11" value="&lt;b&gt;Wait 15 seconds&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5d5d5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="255" y="820" width="250" height="44" as="geometry" />
+    </mxCell>
+
+    <!-- END -->
+    <mxCell id="12" value="END (never reached)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5d5d5;strokeColor=#666666;fontSize=11;fontStyle=2;opacity=40;arcSize=50;" vertex="1" parent="1">
+      <mxGeometry x="300" y="930" width="160" height="36" as="geometry" />
+    </mxCell>
+
+    <!-- EDGES -->
+    <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="2" target="3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="3" target="4" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <!-- WiFi No → retry -->
+    <mxCell id="e3" value="No" style="edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="4" target="3" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points"><mxPoint x="120" y="260" /><mxPoint x="120" y="148" /></Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- WiFi Yes → Read PIR -->
+    <mxCell id="e4" value="Yes" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="4" target="6" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="380" y="340" /></Array></mxGeometry>
+    </mxCell>
+
+    <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="6" target="7" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="7" target="8" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <!-- YES → LED ON -->
+    <mxCell id="e7" value="Yes" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;" edge="1" source="8" target="9" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <!-- NO → Motion detected? -->
+    <mxCell id="e8" value="No" style="edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;" edge="1" source="8" target="13" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <!-- Motion? Yes → bright light -->
+    <mxCell id="e9" value="Yes" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;" edge="1" source="13" target="14" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <!-- Motion? No → no motion -->
+    <mxCell id="e10" value="No" style="edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;" edge="1" source="13" target="15" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="800" y="605" /><mxPoint x="800" y="828" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- LED ON → Wait -->
+    <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="9" target="11" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <!-- Bright light → Wait -->
+    <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;" edge="1" source="14" target="11" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="655" y="718" /><mxPoint x="655" y="842" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- No motion → Wait -->
+    <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;" edge="1" source="15" target="11" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="655" y="828" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- Wait → loop back to Read PIR -->
+    <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" source="11" target="6" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="80" y="842" /><mxPoint x="80" y="398" /></Array></mxGeometry>
+    </mxCell>
+
+  </root>
+</mxGraphModel>
