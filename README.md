@@ -1,23 +1,23 @@
-# Smart Security & Light Control System
-### VIT | AIIoT | 24BEC0411_SANAT_VASISHT
+# 🔐 Smart Security & Light Control System
 
-## Project Overview
-IoT-based smart security system that detects motion and ambient light levels, controls LED lighting automatically, and sends real-time alerts to ThingSpeak cloud.
+**L&T EduTech | Industrial IoT | VIT Vellore**
 
-## Repository Structure
-- /VIT/AIIoT/report → Project report (PDF)
-- /VIT/AIIoT/flowchart → System flowchart (.drawio + .png)
-- /VIT/AIIoT/code → Embedded C source code (.ino)
-- /VIT/AIIoT/vid_demo → Demo video
+---
 
-## Simulation
-Wokwi: https://wokwi.com/projects/466968022326038529
+## 📌 Project Overview
+An IoT-based smart security system that detects human presence in low-light conditions, automatically activates lighting, and sends real-time alerts to the cloud — no human intervention required.
 
-## Cloud Platform
-ThingSpeak Channel ID: 3409155
+---
 
-## Student
-Name: Sanat Vasisht
-Roll No: 24BEC0411
-Institution: VIT Vellore
-Course: L&T EduTech — Industrial IoT
+## 🛠️ Tech Stack
+| Layer | Tool |
+|---|---|
+| Microcontroller | ESP32 |
+| Simulation | Wokwi |
+| Sensors | PIR (HC-SR501), LDR |
+| Cloud | ThingSpeak (Channel ID: 3409155) |
+| Language | Embedded C (Arduino Framework) |
+
+---
+
+## 📁 Repository Structure
