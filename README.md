@@ -31,7 +31,7 @@ VIT/AIIoT/
 
 ## Links
 Wokwi Simulation: https://wokwi.com/projects/466968022326038529
-ThingSpeak Dashboard: https://thingspeak.com/channels/3409155
+ThingSpeak Dashboard: https://thingspeak.mathworks.com/channels/3409155
 
 ---
 
