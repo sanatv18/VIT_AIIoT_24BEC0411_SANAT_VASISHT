@@ -34,6 +34,9 @@ Wokwi Simulation: https://wokwi.com/projects/466968022326038529
 
 ThingSpeak Dashboard: https://thingspeak.mathworks.com/channels/3409155
 
+Video demo link: https://drive.google.com/file/d/1JhmUyuPVtr0ZDdYzOFvZ4OGliZnjpOLZ/view?usp=drive_link
+
+
 ---
 
 ## Student
